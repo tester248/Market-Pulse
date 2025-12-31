@@ -1,0 +1,30 @@
+database:
+  database: financial_data_ingestion
+  host: localhost
+  password: finance123!
+  port: 5432
+  user: financeai
+finance_llm:
+  context_length: 4096
+  model_path: models/finance-llm-13b.Q5_K_S.gguf
+  temperature: 0.3
+logging:
+  file: fast_smart_scraper.log
+  level: INFO
+pipeline:
+  analysis_batch_size: 10
+  analysis_timeout: 300
+  max_concurrent_analyses: 3
+rss_monitor:
+  check_interval_minutes: 5
+  feed_timeout: 30
+  max_concurrent_feeds: 10
+text_extraction:
+  batch_size: 20
+  min_char_count: 300
+  min_word_count: 50
+web_scraper:
+  max_concurrent: 50
+  max_concurrent_per_domain: 5
+  max_retries: 3
+  timeout: 30

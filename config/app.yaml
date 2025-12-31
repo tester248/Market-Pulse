@@ -1,0 +1,68 @@
+# Database Configuration
+database:
+  type: "sqlite"
+  path: "data/financial_data.db"  # SQLite database file path
+  
+  # Connection pool settings (not used for SQLite but kept for compatibility)
+  pool:
+    min_connections: 1
+    max_connections: 1
+    connection_timeout: 30
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  cors_origins:
+    - "*"  # Allow all origins for development
+  
+  # API rate limiting
+  rate_limiting:
+    requests_per_minute: 60
+    burst_size: 10
+
+# Seismograph Configuration
+seismograph:
+  # Update intervals
+  update_interval_seconds: 30
+  chart_window_hours: 24
+  
+  # Tremor detection
+  tremor_sensitivity: 0.1
+  peak_detection_window: 300  # seconds
+  
+  # Data retention
+  raw_data_retention_days: 30
+  aggregated_data_retention_days: 365
+
+# Alert Configuration  
+alerts:
+  enabled: true
+  
+  # Alert thresholds
+  sentiment_threshold: 0.8
+  volume_threshold: 100  # articles per hour
+  quality_threshold: 0.7
+  
+  # Notification channels (configure before use)
+  channels:
+    email:
+      enabled: false
+      smtp_server: ""
+      smtp_port: 587
+      username: ""
+      password: ""
+    
+    webhook:
+      enabled: false
+      url: ""
+      headers: {}
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/financial_ai.log"
+  max_file_size: "10MB"
+  backup_count: 5

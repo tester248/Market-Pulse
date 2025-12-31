@@ -1,0 +1,62 @@
+models:
+  extraction:
+    context_window: 2048
+    keep_alive: 0
+    max_tokens: 300
+    name: llama3.2:1b
+    temperature: 0.1
+    type: extraction
+  general:
+    context_window: 2048
+    keep_alive: 0
+    max_tokens: 500
+    name: llama3.2:3b
+    temperature: 0.2
+    type: general
+  sentiment:
+    context_window: 1024
+    keep_alive: 0
+    max_tokens: 100
+    name: llama3.2:1b
+    temperature: 0.1
+    type: sentiment
+  triage:
+    context_window: 1024
+    keep_alive: 0
+    max_tokens: 150
+    name: llama3.2:1b
+    temperature: 0.1
+    type: classification
+
+ollama:
+  base_url: http://localhost:11434
+  concurrent_requests: 1
+  max_retries: 2
+  model_switching_delay: 1
+  timeout_seconds: 60
+  vram_management: true
+
+processing:
+  batch_size: 1
+  inter_batch_delay: 2
+  memory_management: true
+  model_rotation: true
+
+# Performance Settings
+performance:
+  max_concurrent_models: 1
+  memory_management: true
+  sequential_processing: true
+
+thresholds:
+  quality:
+    excellent_threshold: 0.8
+    fair_threshold: 0.4
+    good_threshold: 0.6
+  sentiment:
+    high_bearish: 0.7
+    high_bullish: 0.7
+    medium_bearish: 0.5
+    medium_bullish: 0.5
+    neutral_max: 0.5
+    neutral_min: 0.3

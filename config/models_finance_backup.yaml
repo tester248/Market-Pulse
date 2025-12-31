@@ -1,0 +1,59 @@
+models:
+  extraction:
+    context_window: 4096
+    keep_alive: 0
+    max_tokens: 500
+    name: martain7r/finance-llama-8b:q4_k_m
+    temperature: 0.1
+    type: extraction
+  general:
+    context_window: 4096
+    keep_alive: 0
+    max_tokens: 1000
+    name: brrndnn/mistral7b-finance:latest
+    temperature: 0.2
+    type: general
+  sentiment:
+    context_window: 1024
+    keep_alive: 0
+    max_tokens: 200
+    name: jjansen/adapt-finance-llama2-7b:latest
+    temperature: 0.1
+    type: sentiment
+  triage:
+    context_window: 2048
+    keep_alive: 0
+    max_tokens: 300
+    name: jjansen/adapt-finance-llama2-7b:latest
+    temperature: 0.1
+    type: classification
+ollama:
+  base_url: http://localhost:11434
+  concurrent_requests: 1
+  max_retries: 2
+  model_switching_delay: 3
+  timeout_seconds: 300
+  vram_management: true
+processing:
+  batch_size: 1
+  inter_batch_delay: 5
+  memory_management: true
+  model_rotation: true
+
+# Performance Settings
+performance:
+  max_concurrent_models: 1
+  memory_management: true
+  sequential_processing: true
+thresholds:
+  quality:
+    excellent_threshold: 0.9
+    fair_threshold: 0.5
+    good_threshold: 0.7
+  sentiment:
+    high_bearish: 0.8
+    high_bullish: 0.8
+    medium_bearish: 0.6
+    medium_bullish: 0.6
+    neutral_max: 0.6
+    neutral_min: 0.4

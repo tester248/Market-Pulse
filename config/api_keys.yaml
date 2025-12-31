@@ -1,0 +1,317 @@
+# FinanceAI Framework - API Keys Configuration
+# This file contains all API key configurations for various services
+# IMPORTANT: Never commit this file with real API keys to version control!
+
+# =============================================================================
+# AI/LLM PROVIDERS
+# =============================================================================
+
+# OpenAI (ChatGPT, GPT-4, GPT-3.5)
+# Get your API key at: https://platform.openai.com/api-keys
+# Pricing: https://openai.com/pricing
+openai:
+  api_key: "YOUR_OPENAI_API_KEY_HERE"
+  organization: "YOUR_ORG_ID_HERE"  # Optional
+  project: "YOUR_PROJECT_ID_HERE"   # Optional
+  usage_notes: |
+    - Free tier: $5 credit (expires after 3 months)
+    - Pay-as-you-go: $0.002-0.12 per 1K tokens
+    - GPT-4: More expensive but higher quality
+    - GPT-3.5-turbo: Cheaper, good for most tasks
+
+# Anthropic (Claude)
+# Get your API key at: https://console.anthropic.com/
+# Pricing: https://www.anthropic.com/pricing
+anthropic:
+  api_key: "YOUR_ANTHROPIC_API_KEY_HERE"
+  usage_notes: |
+    - $5 free credit for new users
+    - Claude-3 Sonnet: $3/$15 per million tokens (input/output)
+    - Claude-3 Haiku: $0.25/$1.25 per million tokens
+    - Good for reasoning and analysis
+
+# Google AI (Gemini)
+# Get your API key at: https://makersuite.google.com/app/apikey
+# Currently free with rate limits
+google:
+  api_key: "YOUR_GOOGLE_AI_API_KEY_HERE"
+  usage_notes: |
+    - Currently free with generous limits
+    - Good alternative to OpenAI
+    - Supports long context windows
+
+# Cohere
+# Get your API key at: https://dashboard.cohere.ai/api-keys
+cohere:
+  api_key: "YOUR_COHERE_API_KEY_HERE"
+  usage_notes: |
+    - Free tier available
+    - Good for embeddings and classification
+    - Specialized in NLP tasks
+
+# =============================================================================
+# FINANCIAL DATA PROVIDERS
+# =============================================================================
+
+# Alpha Vantage (Free stock data)
+# Get your API key at: https://www.alphavantage.co/support/#api-key
+# Free tier: 5 API requests per minute, 500 per day
+alpha_vantage:
+  api_key: "YOUR_ALPHA_VANTAGE_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 5 requests/minute, 500/day
+    - Premium: $49.99/month for unlimited
+    - Good for basic stock data
+
+# Polygon.io (Real-time market data)
+# Get your API key at: https://polygon.io/dashboard/api-keys
+# Free tier: 5 API calls per minute
+polygon:
+  api_key: "YOUR_POLYGON_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 5 calls/minute
+    - Starter: $99/month
+    - High-quality real-time data
+
+# Financial Modeling Prep
+# Get your API key at: https://financialmodelingprep.com/developer/docs
+# Free tier: 250 requests per day
+fmp:
+  api_key: "YOUR_FMP_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 250 requests/day
+    - Starter: $15/month
+    - Good for fundamental data
+
+# IEX Cloud
+# Get your API key at: https://iexcloud.io/
+# Free tier available
+iex_cloud:
+  api_key: "YOUR_IEX_CLOUD_API_KEY_HERE"
+  secret_key: "YOUR_IEX_CLOUD_SECRET_KEY_HERE"
+  usage_notes: |
+    - Free tier available
+    - Pay-per-use pricing
+    - Good for US market data
+
+# Yahoo Finance (via RapidAPI)
+# Get your API key at: https://rapidapi.com/apidojo/api/yahoo-finance1/
+yahoo_finance:
+  api_key: "YOUR_RAPIDAPI_KEY_HERE"
+  usage_notes: |
+    - Free tier: 500 requests/month
+    - Basic: $10/month
+    - Alternative to paid services
+
+# =============================================================================
+# CRYPTOCURRENCY DATA
+# =============================================================================
+
+# CoinGecko
+# Get your API key at: https://www.coingecko.com/en/api/pricing
+# Free tier: 10,000 requests/month
+coingecko:
+  api_key: "YOUR_COINGECKO_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 10,000 requests/month
+    - Analyst: $129/month
+    - Comprehensive crypto data
+
+# CoinMarketCap
+# Get your API key at: https://pro.coinmarketcap.com/api/
+# Free tier: 10,000 requests/month
+coinmarketcap:
+  api_key: "YOUR_CMC_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 10,000 requests/month
+    - Hobbyist: $29/month
+    - Popular crypto data source
+
+# Binance API
+# Get your API key at: https://www.binance.com/en/my/settings/api-management
+binance:
+  api_key: "YOUR_BINANCE_API_KEY_HERE"
+  secret_key: "YOUR_BINANCE_SECRET_KEY_HERE"
+  usage_notes: |
+    - Free with Binance account
+    - High rate limits
+    - Real-time crypto data
+
+# Coinbase Pro API
+# Get your API key at: https://pro.coinbase.com/profile/api
+coinbase:
+  api_key: "YOUR_COINBASE_API_KEY_HERE"
+  secret_key: "YOUR_COINBASE_SECRET_KEY_HERE"
+  passphrase: "YOUR_COINBASE_PASSPHRASE_HERE"
+  usage_notes: |
+    - Free with Coinbase Pro account
+    - US-focused exchange data
+
+# =============================================================================
+# BLOCKCHAIN & DEFI DATA
+# =============================================================================
+
+# Etherscan (Ethereum blockchain data)
+# Get your API key at: https://etherscan.io/apis
+etherscan:
+  api_key: "YOUR_ETHERSCAN_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 5 requests/second
+    - Ethereum blockchain data
+    - Transaction and contract info
+
+# Moralis (Multi-chain blockchain data)
+# Get your API key at: https://admin.moralis.io/
+moralis:
+  api_key: "YOUR_MORALIS_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 40,000 requests/month
+    - Multi-chain support
+    - NFT and DeFi data
+
+# Alchemy (Blockchain infrastructure)
+# Get your API key at: https://dashboard.alchemyapi.io/
+alchemy:
+  api_key: "YOUR_ALCHEMY_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 300M compute units/month
+    - Enterprise blockchain infrastructure
+    - High reliability
+
+# The Graph Protocol
+# Get your API key at: https://thegraph.com/studio/
+thegraph:
+  api_key: "YOUR_GRAPH_API_KEY_HERE"
+  usage_notes: |
+    - Decentralized indexing protocol
+    - Query blockchain data
+    - Free tier available
+
+# =============================================================================
+# NEWS & SENTIMENT DATA
+# =============================================================================
+
+# News API
+# Get your API key at: https://newsapi.org/register
+news_api:
+  api_key: "YOUR_NEWS_API_KEY_HERE"
+  usage_notes: |
+    - Free tier: 1,000 requests/month
+    - Developer: $449/month
+    - Global news sources
+
+# Alpha Vantage News & Sentiment
+# Uses same key as Alpha Vantage above
+alpha_vantage_news:
+  api_key: "YOUR_ALPHA_VANTAGE_API_KEY_HERE"
+  usage_notes: |
+    - Same limits as Alpha Vantage
+    - Financial news and sentiment
+    - Market-specific news
+
+# =============================================================================
+# ECONOMIC DATA
+# =============================================================================
+
+# FRED (Federal Reserve Economic Data)
+# Get your API key at: https://fred.stlouisfed.org/docs/api/api_key.html
+fred:
+  api_key: "YOUR_FRED_API_KEY_HERE"
+  usage_notes: |
+    - Free with registration
+    - US economic indicators
+    - Historical economic data
+
+# World Bank Data
+# Get your API key at: https://datahelpdesk.worldbank.org/knowledgebase/articles/889392
+world_bank:
+  api_key: "YOUR_WORLD_BANK_API_KEY_HERE"
+  usage_notes: |
+    - Free access
+    - Global economic indicators
+    - Development data
+
+# =============================================================================
+# SOCIAL MEDIA & SENTIMENT
+# =============================================================================
+
+# Twitter API v2
+# Get your API key at: https://developer.twitter.com/
+twitter:
+  bearer_token: "YOUR_TWITTER_BEARER_TOKEN_HERE"
+  api_key: "YOUR_TWITTER_API_KEY_HERE"
+  api_secret: "YOUR_TWITTER_API_SECRET_HERE"
+  access_token: "YOUR_TWITTER_ACCESS_TOKEN_HERE"
+  access_token_secret: "YOUR_TWITTER_ACCESS_TOKEN_SECRET_HERE"
+  usage_notes: |
+    - Free tier: 1,500 tweets/month
+    - Basic: $100/month
+    - Social sentiment analysis
+
+# Reddit API
+# Get your API key at: https://www.reddit.com/prefs/apps
+reddit:
+  client_id: "YOUR_REDDIT_CLIENT_ID_HERE"
+  client_secret: "YOUR_REDDIT_CLIENT_SECRET_HERE"
+  user_agent: "YOUR_APP_NAME_HERE"
+  usage_notes: |
+    - Free with Reddit account
+    - Rate limited
+    - Community sentiment data
+
+# =============================================================================
+# DATABASE CONNECTIONS
+# =============================================================================
+
+# PostgreSQL
+postgresql:
+  host: "localhost"
+  port: 5432
+  database: "financeai"
+  username: "YOUR_POSTGRES_USERNAME"
+  password: "YOUR_POSTGRES_PASSWORD"
+
+# MongoDB
+mongodb:
+  connection_string: "mongodb://username:password@localhost:27017/financeai"
+
+# Redis (for caching)
+redis:
+  host: "localhost"
+  port: 6379
+  password: "YOUR_REDIS_PASSWORD"
+  database: 0
+
+# =============================================================================
+# CLOUD SERVICES
+# =============================================================================
+
+# AWS
+aws:
+  access_key_id: "YOUR_AWS_ACCESS_KEY_ID"
+  secret_access_key: "YOUR_AWS_SECRET_ACCESS_KEY"
+  region: "us-east-1"
+
+# Google Cloud
+gcp:
+  project_id: "YOUR_GCP_PROJECT_ID"
+  credentials_file: "path/to/service-account-key.json"
+
+# Azure
+azure:
+  subscription_id: "YOUR_AZURE_SUBSCRIPTION_ID"
+  tenant_id: "YOUR_AZURE_TENANT_ID"
+  client_id: "YOUR_AZURE_CLIENT_ID"
+  client_secret: "YOUR_AZURE_CLIENT_SECRET"
+
+# =============================================================================
+# SECURITY NOTES
+# =============================================================================
+security_notes: |
+  1. NEVER commit this file with real API keys to version control
+  2. Use environment variables in production
+  3. Rotate API keys regularly
+  4. Monitor API usage and costs
+  5. Use different keys for development and production
+  6. Keep backups of important keys securely
+  7. Review access permissions regularly

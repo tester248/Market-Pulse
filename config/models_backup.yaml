@@ -1,0 +1,71 @@
+# Model Configuration for AI Core Assembly Line Pipeline
+# Fill in the actual model names before deployment
+
+# Ollama Configuration
+ollama:
+  base_url: "http://localhost:11434"
+  timeout_seconds: 30
+  max_retries: 3
+
+# Specialized Finance Models
+models:
+  # Triage/Classification Model
+  triage:
+    name: "jjansen/adapt-finance-llama2-7b"  # Replace with actual model name
+    type: "classification"
+    temperature: 0.1
+    max_tokens: 300
+    context_window: 4096
+    
+  # Sentiment Analysis Model  
+  sentiment:
+    name: "jjansen/adapt-finance-llama2-7b"  # Replace with actual model name
+    type: "sentiment"
+    temperature: 0.1
+    max_tokens: 500
+    context_window: 2048
+    
+  # Data Extraction Model
+  extraction:
+    name: "martain7r/finance-llama-8b:q4_k_m"  # Replace with actual model name
+    type: "extraction"
+    temperature: 0.1
+    max_tokens: 1000
+    context_window: 8192
+    
+  # General Analysis Model (for complex queries)
+  general:
+    name: "brrndnn/mistral7b-finance"  # Replace with actual model name
+    type: "general"
+    temperature: 0.2
+    max_tokens: 2048
+    context_window: 8192
+
+# Processing Thresholds
+thresholds:
+  # Sentiment strength thresholds for seismograph
+  sentiment:
+    high_bullish: 0.8
+    medium_bullish: 0.6
+    neutral_min: 0.4
+    neutral_max: 0.6
+    medium_bearish: 0.4
+    high_bearish: 0.2
+    
+  # Quality thresholds for processing decisions
+  quality:
+    minimum_for_signals: 0.7
+    minimum_for_alerts: 0.6
+    minimum_for_reports: 0.8
+    
+  # Seismograph trigger thresholds
+  seismograph:
+    peak_threshold: 0.85  # Trigger full pipeline + report generation
+    update_threshold: 0.3  # Just update graph
+    
+# Performance Settings
+performance:
+  max_concurrent_jobs: 5
+  batch_size: 10
+  processing_timeout_seconds: 120
+  queue_max_size: 100

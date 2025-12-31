@@ -1,0 +1,193 @@
+# RSS Feed Configuration for Financial Data Scraping
+# Easy to modify, add, or remove feeds without changing code
+
+rss_feeds:
+  # Financial News Sources
+  financial_news:
+    - name: "Economic Times Markets"
+      url: "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"
+      category: "markets"
+      priority: 1
+      enabled: true
+      update_frequency: 300  # seconds
+      
+    - name: "Economic Times Top Stories"
+      url: "https://cfo.economictimes.indiatimes.com/rss/topstories"
+      category: "markets"
+      priority: 1
+      enabled: true
+      update_frequency: 300  # seconds
+      
+    - name: "NASDAQ Original"
+      url: "https://www.nasdaq.com/feed/nasdaq-original/rss.xml"
+      category: "markets"
+      priority: 1
+      enabled: true
+      update_frequency: 300
+      
+    - name: "Financial Times"
+      url: "https://www.ft.com/rss/home"
+      category: "finance"
+      priority: 1
+      enabled: true
+      update_frequency: 600
+      
+    - name: "Money.com"
+      url: "https://money.com/money/feed/"
+      category: "finance"
+      priority: 2
+      enabled: true
+      update_frequency: 600
+      
+    - name: "MarketWatch Headlines"
+      url: "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines"
+      category: "markets"
+      priority: 1
+      enabled: true
+      update_frequency: 300
+      
+    - name: "CNBC Finance"
+      url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"
+      category: "financial_news"
+      priority: 1
+      enabled: true
+      update_frequency: 300
+
+  # Cryptocurrency Sources
+  crypto_news:
+    - name: "CoinDesk"
+      url: "https://feeds.feedburner.com/CoinDesk"
+      category: "crypto_news"
+      priority: 1
+      enabled: true
+      update_frequency: 300
+      
+    - name: "Cointelegraph"
+      url: "https://cointelegraph.com/rss"
+      category: "crypto_news"
+      priority: 2
+      enabled: true
+      update_frequency: 600
+      
+    - name: "Crypto News"
+      url: "https://cryptonews.com/news/feed/"
+      category: "crypto_analysis"
+      priority: 2
+      enabled: true
+      update_frequency: 600
+
+  # Economic Data Sources
+  economic_data:
+    - name: "Federal Reserve Economic Data"
+      url: "https://fred.stlouisfed.org/releases/rss"
+      category: "economic_indicators"
+      priority: 1
+      enabled: true
+      update_frequency: 3600  # hourly
+      
+    - name: "Bureau of Labor Statistics"
+      url: "https://www.bls.gov/feed/news_release/empsit.rss"
+      category: "employment_data"
+      priority: 1
+      enabled: true
+      update_frequency: 3600
+      
+    - name: "Treasury Department"
+      url: "https://home.treasury.gov/rss"
+      category: "treasury_news"
+      priority: 2
+      enabled: true
+      update_frequency: 3600
+
+  # Stock Market Sources
+  stock_market:
+    - name: "Yahoo Finance"
+      url: "https://feeds.finance.yahoo.com/rss/2.0/topstories"
+      category: "stock_news"
+      priority: 1
+      enabled: true
+      update_frequency: 300
+      
+    - name: "Seeking Alpha"
+      url: "https://seekingalpha.com/feed.xml"
+      category: "stock_analysis"
+      priority: 2
+      enabled: true
+      update_frequency: 600
+      
+    - name: "Motley Fool"
+      url: "https://www.fool.com/feeds/index.aspx"
+      category: "investment_advice"
+      priority: 2
+      enabled: true
+      update_frequency: 1200
+
+  # Alternative Sources
+  alternative_sources:
+    - name: "Investopedia"
+      url: "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headlines"
+      category: "financial_education"
+      priority: 3
+      enabled: false  # Disabled by default
+      update_frequency: 3600
+      
+    - name: "Zacks Investment Research"
+      url: "https://www.zacks.com/rss/rss_news.php"
+      category: "investment_research"
+      priority: 3
+      enabled: false
+      update_frequency: 1800
+
+# Feed Processing Configuration
+processing_config:
+  max_concurrent_feeds: 10
+  request_timeout: 30
+  retry_attempts: 3
+  retry_delay: 10
+  user_agent: "FinanceAI-Bot/1.0"
+  
+# Content Filtering
+content_filters:
+  keywords_include:
+    - "earnings"
+    - "revenue"
+    - "profit"
+    - "market"
+    - "stock"
+    - "investment"
+    - "financial"
+    - "economy"
+    - "trading"
+    - "crypto"
+    - "bitcoin"
+    - "ethereum"
+    
+  keywords_exclude:
+    - "advertisement"
+    - "sponsored"
+    - "promotion"
+    - "celebrity"
+    - "gossip"
+    
+  min_article_length: 100
+  max_article_age_hours: 24
+
+# Storage Configuration
+storage:
+  database_path: "data/rss_articles.db"
+  backup_enabled: true
+  backup_frequency: 86400  # daily
+  max_articles_per_feed: 1000
+  cleanup_old_articles: true
+  cleanup_age_days: 30
+
+# Integration Settings
+integration:
+  finance_llm_analysis: true
+  sentiment_analysis: true
+  summarization: true
+  virtual_trading_signals: true
+  alert_thresholds:
+    sentiment_change: 0.3
+    volume_spike: 2.0
+    price_change: 0.05
