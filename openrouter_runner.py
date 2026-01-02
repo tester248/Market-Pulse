@@ -125,7 +125,7 @@ class RSSFeedProcessor:
 class MultiModelProcessor:
     def __init__(self, api_key: str = None):
         # Use environment variable or fallback to provided key
-        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY", "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")
+        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY", "")
         
         # List of currently available free models on OpenRouter (updated list)
         self.free_models = [
